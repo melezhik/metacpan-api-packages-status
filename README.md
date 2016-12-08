@@ -1,6 +1,6 @@
 # SYNOPSIS
 
-Checks packages statuses against ones listed at 02packages file.
+Checks packages statuses at MetaCPAN. A list of packages is taken from 02packages file.
 
 
 # INSTALL
