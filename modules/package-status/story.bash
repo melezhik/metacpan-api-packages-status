@@ -1,11 +1,11 @@
+n=$(story_var n);
 export line=$(story_var line);
-#echo $line
 
 if perl -e "$line=~/^(\\S+):\\s/ or $line=~/^$/ or exit 1"; then
-  echo skip header line: $line
+  echo "[$n]" skip header line: $line
 else
     export package=$(perl -e "$line=~/^(\\S+)\\s/ and print \$1")
-    echo -n load meta info for $package ... ' ';
+    echo -n "[$n]" load meta info for $package "( https://fastapi.metacpan.org/v1/module/$package )" ... ' ';
   if curl -s -f https://fastapi.metacpan.org/v1/module/$package -o $test_root_dir/$package.json; then
     echo ok
     echo pasring $test_root_dir/$package.json ...
