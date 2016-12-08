@@ -1,5 +1,6 @@
 n=$(story_var n);
 export line=$(story_var line);
+sleep=$(config sleep);
 
 if perl -e "$line=~/^(\\S+):\\s/ or $line=~/^$/ or exit 1"; then
   echo "[$n]" skip header line: $line
@@ -15,7 +16,7 @@ else
   else
     echo fail
   fi
-  sleep 1;
+  sleep $sleep;
 
 fi
 

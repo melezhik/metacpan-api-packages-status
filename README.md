@@ -31,6 +31,14 @@ Process no more $lines of 02packages file. Useful when debugging. By default $li
 
 A CPAN mirror URL to download 02packages file.  Default value is `http://www.cpan.org/modules`
 
+## sleep
+
+Sleep $sleep seconds before initiating  next request to MetaCPAN API. Default value is `1`. 
+
+For example:
+
+    $ sparrow plg run metacpan-api-packages-status --param sleep=5
+
 # Author
 
 Alexey Melezhik
