@@ -24,4 +24,4 @@ Alexey Melezhik
 
 # See also 
 
-[metacpan-api docs](https://github.com/metacpan/metacpan-api)
+[MetaCPAN API Docs](https://github.com/metacpan/metacpan-api/blob/master/docs/API-docs.md)
