@@ -18,8 +18,6 @@ if [ -t 0 ]; then
     
     curl -s -f $cpan_mirror/02packages.details.txt 2>&1 | while read line; do  
 
-        (( ++COUNTER ))
-
         if test $lines && test $COUNTER -gt $lines; then
           set_stdout "counter > $lines, so I am done" 
           break
@@ -27,12 +25,13 @@ if [ -t 0 ]; then
           run_story package-status n $COUNTER line "'$line'"
         fi
 
+        (( ++COUNTER ))
+
     done
 
 else
     while read -r line ; do
 
-        COUNTER=$[$COUNTER +1]
         
         if test $lines && test $COUNTER -gt $lines; then
           set_stdout "counter > $lines, so I am done" 
@@ -40,6 +39,8 @@ else
         else
           run_story package-status n $COUNTER line "'$line'"
         fi
+
+        (( ++COUNTER ))
 
     done
 fi
