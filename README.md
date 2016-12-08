@@ -2,6 +2,9 @@
 
 Checks packages statuses at MetaCPAN. A list of packages is taken from 02packages file.
 
+# Travis status
+
+[![Build Status](https://travis-ci.org/melezhik/sparrow.svg)](https://travis-ci.org/melezhik/metacpan-api-packages-status)
 
 # INSTALL
 
