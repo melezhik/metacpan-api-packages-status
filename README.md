@@ -15,8 +15,8 @@ Checks packages statuses at MetaCPAN. A list of packages is taken from 02package
 
 If you are plugin developer it's probably better download 02packages file and the feed it to the plugin:
 
-    $ curl http://www.cpan.org/modules/02packages.details.txt -o 02packages.details.txt
-    $ cat 02packages.details.txt | sparrow plg run metacpan-api-packages-status
+    $ curl http://www.cpan.org/modules/02packages.details.txt -o /tmp/02packages.details.txt
+    $ head -n 13 /tmp/02packages.details.txt | sparrow plg run metacpan-api-packages-status
 
 # Author
 
