@@ -7,5 +7,5 @@ install:
     - cpanm --notest -q Sparrow
     - sparrow plg install metacpan-api-packages-status
 
-script: metacpan-api-packages-status --param lines=30
+script: sparrow plg run metacpan-api-packages-status --param lines=30
 
