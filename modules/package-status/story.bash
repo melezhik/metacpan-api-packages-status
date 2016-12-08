@@ -7,7 +7,8 @@ if perl -e "$line=~/^(\\S+):\\s/ or $line=~/^$/ or exit 1"; then
 else
     export package=$(perl -e "$line=~/^(\\S+)\\s/ and print \$1")
     echo -n "[$n]" load meta info for $package "( https://fastapi.metacpan.org/v1/module/$package )" ... ' ';
-  if curl -s -f https://fastapi.metacpan.org/v1/module/$package -o $test_root_dir/$package.json; then
+  if curl -G -s -f https://fastapi.metacpan.org/v1/module/$package \
+    -d 'fields=status,date' -o $test_root_dir/$package.json; then
     echo ok
     echo pasring $test_root_dir/$package.json ...
     cat $test_root_dir/$package.json | perl -MJSON -e '
